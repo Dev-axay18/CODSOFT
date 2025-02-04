@@ -23,10 +23,10 @@ During my **CodSoft Web Development Internship**, I worked on multiple **challen
 
 | #  | Project Name | Description | Technologies |Level | Stauts |
 |----|-------------|-------------|--------------|-------------|------------
-| 1  | **Landing Page** | Basic Landing Page Using HTML, CSS and Javascript  | HTML, CSS, Javascript|  **1** |Incomplete
-| 2  | **Portfolio** | Self Portfolio Using HTML, CSS, Javascript and React (Optional) | React.js, Node.js, Express.js |**1**| Incomplete
-| 3  | **Calculator** | Simple Calculator For Calculating Simple Equeations | HTML, CSS, Javascriipt| **1**| Incomplete
-| 4  | **Tribute Page** | Tribute Page  | HTML, CSS | **2**| Incomplete
+| 1  | **Landing Page** | Basic Landing Page Using HTML, CSS and Javascript  | HTML, CSS, Javascript|  **1** | Complete ✅
+| 2  | **Portfolio** | Self Portfolio Using HTML, CSS, Javascript and React (Optional) | React.js, Node.js, Express.js |**1**| Complete ✅
+| 3  | **Calculator** | Simple Calculator For Calculating Simple Equeations | HTML, CSS, Javascriipt| **1**| Complete ✅
+| 4  | **Tribute Page** | Tribute Page  | HTML, CSS | **2**| Complete ✅
 | 5| **Job Board** | A Job Board Where People Can Seek and Find Jobs and Get Employed  | HTML, CSS, ReactJs, Nodejs, MongoDB | **2**| Incomplete
 | 6| **Blogging Platform** | A Fully Functional Blogging Platform for Bloggers and Users | HTML, CSS, ReactJs, Python, Firebase, Hosting,| **3**| Incomplete
 | 7| **Project Management Tool** | A Tool That Allows User to Create, Assign Tasks, Set Deadlines and Track Progress.  | HTML, CSS, ReactJs, NodeJs, PostgreSQL | **3**| Incomplete
