@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>| CINESCAPE |</title>
+  <link rel="icon" href="popcorn.png" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash"></script> 
+</head>
+
+<body class="bg-black">
+  <header class="absolute top-0 left-0 w-full flex justify-between items-center p-[30px_100px] z-10">
+    <a href="#" class="text-4xl text-white tracking-wide font-extrabold">Cinescape</a>
+    <ul class="flex">
+      <li class="list-none mx-2 "><a
+          class="text-white font-medium tracking-wide no-underline cursor-pointer transition-all duration-300 hover:text-[var(--primary)] "
+          href="#"><i class='bx bxs-home text-xl'></i> </a></li>
+      <li class="list-none mx-2 "><a
+          class="text-white font-medium tracking-wide no-underline cursor-pointer transition-all duration-300 hover:text-[var(--primary)] pl-[40px]"
+          href="#">GENRE</a></li>
+      <li class="list-none mx-2 "><a
+          class="text-white font-medium tracking-wide no-underline cursor-pointer transition-all duration-300 hover:text-[var(--primary)] pl-[40px]"
+          href="#">WEB SERIES</a></li>
+      <li class="list-none mx-2 "><a
+          class="text-white font-medium tracking-wide no-underline cursor-pointer transition-all duration-300 hover:text-[var(--primary)] pl-[40px]"
+          href="#">TRENDING</a></li>
+      <li class="list-none mx-2 "><a
+          class="text-white font-medium tracking-wide no-underline cursor-pointer transition-all duration-300 hover:text-[var(--primary)] pl-[40px]"
+          href="#">MY LIST</a></li>
+    </ul>
+    <div class="relative w-[500px] h-[40px]">
+      <input type="text" placeholder="Search Movie, Series, Drama"
+        class="w-2xl inset-0 text-white bg-transparent backdrop-blur-[30px] border border-white/50 rounded-[10px] outline-none px-[10px] pl-[45px] placeholder:text-white block placeholder-center text-center placeholder-center p-2 border rounded" id="searchInput" onkeyup="searchMovies()">
+        <div id="movieResults" class="mt-4 space-y-4"></div>
+      <i
+        class='bx bx-search absolute top-1/2 left-2 transform -translate-y-1/2 pr-2 text-white border-r border-white ml-xl'></i>
+    </div>
+
+
+
+  </header>
+  <div
+    class="relative w-full min-h-screen px-[100px] flex justify-between items-center bg-[url('https://static01.nyt.com/images/2019/10/05/arts/04Joker-Cover/merlin_161549496_c55020b5-50f8-432b-a141-64fea126a42b-videoSixteenByNineJumbo1600.jpg')] bg-cover bg-cente overflow-hidden transition-all duration-500 bg-no-repeat banner">
+    <div class="content joker active">
+      <img src="/assets/joker.png" alt="" class="max-w-[350px]
+          ">
+      <h4 class="text-white/50 font-normal text-[30px]">
+        <span class="px-[15px] py-0 border-r-[2.5px] border-r-[rgb(177,30,30)]">2019</span><span
+          class="px-[15px] py-0 border-r-[2.5px] border-r-[rgb(177,30,30)]"><i
+            class="bg-[var(--primary)] text-white px-[8px] inline-block rounded-md">12+</i></span><span
+          class="px-[15px] py-0 border-r-[2.5px] border-r-[rgb(177,30,30)]"">2 Hour 2 Min</span><span class=" px-[15px]
+          py-0 border-r-[2.5px] border-r-[rgb(177,30,30)]"">Psychological Thriller, Crime</span>
+      </h4>
+      <p class="text-base font-light leading-[1.5em] text-white my-[10px] mb-[20px]">Joker tells the haunting story of
+        Arthur Fleck, a man descending into madness in Gotham City, exploring themes of isolation and societal neglect.
+        A psychological thriller filled with dark twists and an unforgettable performance by Joaquin Phoenix.</p>
+      <div class="relative">
+        <a href="#"
+          class="relative inline-block mr-10 bg-[var(--primary)] text-white px-[20px] py-[6px] no-underline font-[450] tracking-[2px] uppercase transition-all duration-500 cursor-pointer rounded-xl"
+          onclick="toggleVideo();"><i class='bx bx-play'></i>Watch</a>
+        <a href="#"
+          class="relative inline-block mr-10 bg-[var(--primary)] text-white px-[20px] py-[6px] no-underline font-[450] tracking-[2px] uppercase transition-all duration-500 cursor-pointer rounded-xl bg-black/50 border border-white/40 hover:bg-[var(--primary)]"><i
+            class='bx bx-list-plus'></i>My List</a>
+      </div>
+    </div>
+    <div class="content alice">
+      <img src="/assets/alice.png" alt="" class="max-w-[350px]
+          ">
+      <h4 class="text-white/50 font-normal text-[30px]">
+        <span class="px-[15px] py-0 border-r-[2.5px] border-r-[rgb(177,30,30)]">2020</span><span
+          class="px-[15px] py-0 border-r-[2.5px] border-r-[rgb(177,30,30)]"><i
+            class="bg-[var(--primary)] text-white px-[8px] inline-block rounded-md">15+</i></span><span
+          class="px-[15px] py-0 border-r-[2.5px] border-r-[rgb(177,30,30)]"">8 Episode</span><span class=" px-[15px]
+          py-0 border-r-[2.5px] border-r-[rgb(177,30,30)]"">Fantasy </span>
+      </h4>
+      <p class="text-base font-light leading-[1.5em] text-white my-[10px] mb-[20px]">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quod iure delectus, dolore optio dolores tenetur earum facere pariatur, porro quasi voluptas ullam? Sint inventore, temporibus nam suscipit necessitatibus quia impedit!.</p>
+      <div class="relative">
+        <a href="#"
+          class="relative inline-block mr-10 bg-[var(--primary)] text-white px-[20px] py-[6px] no-underline font-[450] tracking-[2px] uppercase transition-all duration-500 cursor-pointer rounded-xl"
+          onclick="toggleVideo();"><i class='bx bx-play'></i>Watch</a>
+        <a href="#"
+          class="relative inline-block mr-10 bg-[var(--primary)] text-white px-[20px] py-[6px] no-underline font-[450] tracking-[2px] uppercase transition-all duration-500 cursor-pointer rounded-xl bg-black/50 border border-white/40 hover:bg-[var(--primary)]"><i
+            class='bx bx-list-plus'></i>My List</a>
+      </div>
+    </div>
+
+
+
+
+    <div
+      class="relative min-w-[950px] flex justify-center items-center bg-black/20 shadow-[20px_20px_50px_rgba(0,0,0,0.5)] border border-white/20  rounded-xl">
+
+      <div class="carousel " >
+
+        <!-- JOKER  -->
+        <div class="carousel-item" onClick="changeMovieDetails('joker')">
+          <img
+            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/aaa79357-9476-4c1d-b9a8-6e881f2449d3/ddf2fj4-21be364b-d5d0-4182-a85a-cca3e8da8646.jpg/v1/fill/w_1024,h_1518,q_75,strp/joker_2019_hd_poster_by_buffy2ville_ddf2fj4-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTUxOCIsInBhdGgiOiJcL2ZcL2FhYTc5MzU3LTk0NzYtNGMxZC1iOWE4LTZlODgxZjI0NDlkM1wvZGRmMmZqNC0yMWJlMzY0Yi1kNWQwLTQxODItYTg1YS1jY2EzZThkYTg2NDYuanBnIiwid2lkdGgiOiI8PTEwMjQifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.qw3KrNoWmzrIkMr6FUISu-a1gyYRBliW_NKAo3PY89E"
+            alt=""
+            class="max-w-[350px] rounded-[10px] transform translate-x-[8px] translate-y-[-100px] object-contain object-center">
+        </div>
+        <!-- squid game -->
+        <div class="carousel-item" onClick="changeMovieDetails('squid')">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTHKFQQTNbuJ40BJA96jTUf40QUQsWMsGZK2A&s" alt=""
+            class="max-w-[350px] rounded-[10px] transform translate-x-[8px] translate-y-[-100px] object-contain object-center">
+        </div>
+
+        <!-- Alice in BorderLand -->
+        <div class="carousel-item h-full w-full justify-center" onClick="changeMovieDetails('alice')">
+          <img src="https://i0.wp.com/www.salocin.com/wp-content/uploads/2021/03/f0798e70212fd44bcd9830506d5184071.jpg"
+            alt=""
+            class="max-w-[350px] rounded-[10px] transform translate-x-[8px] translate-y-[-100px] object-contain object-center">
+        </div>
+
+        <!-- Carry On  -->
+        <div class="carousel-item" onClick="changeMovieDetails('carryOn')">
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BZDQwMjUzYWItOWFlYS00ZmJmLWFhNWUtMjY1NzkxM2M5ODg1XkEyXkFqcGc@._V1_.jpg"
+            alt=""
+            class="max-w-[350px] rounded-[10px] transform translate-x-[8px] translate-y-[-100px] object-contain object-center">
+        </div>
+        <!-- Gladiator  -->
+        <div class="carousel-item" onClick="changeMovieDetails('gladiator')">
+          <img
+            src="https://assets-in.bmscdn.com/iedb/movies/images/mobile/thumbnail/xlarge/gladiator-ii-et00413291-1732095986.jpg"
+            alt=""
+            class="max-w-[350px] rounded-[10px] transform translate-x-[8px] translate-y-[-100px] object-contain object-center">
+        </div>
+        <!-- HARRY POTTER  -->
+        <div class="carousel-item" onClick="changeMovieDetails('harry')">
+          <img
+            src="https://images.squarespace-cdn.com/content/v1/5c75dfa97d0c9166551f52b1/1601583724181-ZXWV0T5IUUIL9SPPRNSG/harry-potter-and-the-deathly-hallows-part-2-2011.jpg"
+            alt=""
+            class="max-w-[350px] rounded-[10px] transform translate-x-[8px] translate-y-[-100px] object-contain object-center">
+        </div>
+        <!-- LANDMAN  -->
+        <div class="carousel-item" onClick="changeMovieDetails('landMan')">
+          <img
+            src="https://m.media-amazon.com/images/M/MV5BNTRkY2ZkNzUtMzBlNC00NTc0LWE0ZDQtMWZiNGU5OWEyZGU4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg"
+            alt=""
+            class="max-w-[350px] rounded-[10px] transform translate-x-[8px] translate-y-[-100px] object-contain object-center">
+        </div>
+
+        <!-- MUFASA  -->
+        <div class="carousel-item" onClick="changeMovieDetails('mufasa')">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDqmBohoQo8izd2vigVjlmvSdSV8xbJZ3qyw&s" alt=""
+            class="max-w-[350px] rounded-[10px] transform translate-x-[8px] translate-y-[-100px] object-contain object-center">
+        </div>
+
+        <!-- VENOM  -->
+        <div class="carousel-item" onClick="changeMovieDetails('venom')">
+          <img
+            src="https://resizing.flixster.com/WKOrCI1pVpSpvXmfaD3NIq0ZalA=/ems.cHJkLWVtcy1hc3NldHMvbW92aWVzL2RiYTFmYWJlLTRhOWYtNDU2Zi04ZjliLTQ2NTI3OWNjYmYyNi53ZWJw"
+            alt=""
+            class="max-w-[350px] rounded-[10px] transform translate-x-[8px] translate-y-[-100px] object-contain object-center">
+        </div>
+
+        <!-- WICKED -->
+        <div class="carousel-item" onClick="changeMovieDetails('wicked')">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlbNNsmWSLZYqRmwxD2YPRkHKihCBP6HbJcA&s" alt=""
+            class="max-w-[350px] rounded-[10px] transform translate-x-[8px] translate-y-[-100px] object-contain object-center">
+        </div>
+
+        <!--RED NOTICE  -->
+        <div class="carousel-item" onClick="changeMovieDetails('redNotice')">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEi7HB24ohaveqs8Afze3pCcCalD2XC1elug&s" alt=""
+            class="max-w-[350px] rounded-[10px] transform translate-x-[8px] translate-y-[-100px] object-contain object-center">
+        </div>
+
+        <!-- NEW SERIES  -->
+        <div class="carousel-item" onClick="changeMovieDetails('avengers')">
+          <img src="https://i.etsystatic.com/37166133/r/il/041a9b/4087804564/il_570xN.4087804564_lvaq.jpg" alt=""
+            class="max-w-[350px] rounded-[10px] transform translate-x-[8px] translate-y-[-100px] object-contain object-center">
+        </div>
+
+      </div>
+    </div>
+    <a href="#"
+      class="absolute bottom-[50px] left-[100px] inline-flex justify-start items-center text-white no-underline uppercase font-medium tracking-[1.5px] text-[1.2em] cursor-pointer transition-transform duration-300 ease-in-out"><i
+        class='bx bx-play-circle mr-[10px] text-[40px] cursor-pointer hover:bg-[var(--primary)] rounded-full'></i>Watch
+      Trailer</a>
+    <ul class="absolute bottom-[50px] right-[100px] inline-flex justify-center items-center gap-[25px]">
+      <li><a href="#"
+          class="text-white no-underline uppercase font-medium tracking-[1.5px] text-[25px] transition-all duration-300 cursor-pointer hover:text-[var(--primary)] "><i
+            class='bx bxl-instagram'></i></a></li>
+      <li><a href="#"
+          class="text-white no-underline uppercase font-medium tracking-[1.5px] text-[25px] transition-all duration-300 cursor-pointer hover:text-[var(--primary)] "><i
+            class='bx bxl-gmail'></i></a></li>
+      <li><a href="#"
+          class="text-white no-underline uppercase font-medium tracking-[1.5px] text-[25px] transition-all duration-300 cursor-pointer hover:text-[var(--primary)] "><i
+            class='bx bxl-patreon'></i></a></li>
+
+    </ul>
+  </div>
+  <div class="trailer">
+    <video
+      src="https://stagethirtytwovideo.s3.amazonaws.com/sites/stage32.com/files/media/2924035343005002891/2924035343005002891.mp4"
+      controls autoplay muted class="max-w-[1000px] outline-none"></video>
+    <!-- <img src="" class="close" alt=""> -->
+    <i class='bx bx-x close' onclick="toggleVideo();"></i>
+  </div>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="script.js"></script>
+  <script>
+
+    // Or with jQuery
+
+    $(document).ready(function () {
+      $('.carousel').carousel();
+    });
+  </script>
+ <script>
+ const apiKey = '2c7738ac'; // Replace with your OMDb API key
+
+// Function to search movies when the user types
+function searchMovies() {
+    const query = document.getElementById('searchInput').value;
+    
+    if (query.length > 0) {
+        axios.get(`https://www.omdbapi.com/?apikey=${apiKey}&s=${query}`)
+            .then(response => {
+                console.log(response.data); // Log the response for debugging
+                if (response.data.Response === "True") {
+                    const movieResults = response.data.Search;
+                    displayResults(movieResults); // Function to display search results
+                } else {
+                    console.log("No results found.");
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching data: ', error);
+            });
+    }
+}
+
+function displayResults(movies) {
+    const movieResultsDiv = document.getElementById('movieResults');
+    movieResultsDiv.innerHTML = ''; // Clear previous results
+
+    movies.forEach(movie => {
+        const movieElement = document.createElement('div');
+        movieElement.classList.add('movie-result');
+        movieElement.innerHTML = `
+            <img src="${movie.Poster}" alt="${movie.Title}" class="movie-poster">
+            <p class="movie-title">${movie.Title}</p>
+        `;
+        movieResultsDiv.appendChild(movieElement);
+    });
+}
+const movieElement = document.createElement('div');
+movieElement.classList.add('movie-result');
+movieElement.innerHTML = `
+    <img src="${movie.Poster.replace('SX300', 'SX500')}" alt="${movie.Title}" class="movie-poster">
+    <p class="movie-title">${movie.Title}</p>
+`;
+
+function displayResults(movies) {
+    const movieResultsDiv = document.getElementById('movieResults');
+    movieResultsDiv.innerHTML = ''; // Clear previous results
+
+    movies.forEach(movie => {
+        const movieElement = document.createElement('div');
+        movieElement.classList.add('movie-result');
+        
+        // Use large size (SX500) for images
+        const posterUrl = movie.Poster.includes('http') 
+            ? movie.Poster.replace('SX300', 'SX500') // Replace size
+            : ''; // Handle missing poster URLs
+
+        movieElement.innerHTML = `
+            <img src="${posterUrl}" alt="${movie.Title}" class="movie-poster">
+            <p class="movie-title">${movie.Title}</p>
+        `;
+        movieResultsDiv.appendChild(movieElement);
+    });
+}
+
+
+ </script>
+</body>
+
+</html>
