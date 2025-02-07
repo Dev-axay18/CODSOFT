@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Funnel+Display&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <title>Albert Einstein - Tribute Page</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: "Poppins", sans-serif;
+            /* background-color: #0d0d0d; */
+            background: url(albert-einstein2.jpg);
+            color: #fff;
+            text-align: center;
+        }
+        .quote {
+            font-size: 2rem;
+            padding: 50px;
+            background:linear-gradient(50deg,rgb(27, 27, 27),black,rgb(7, 6, 6));
+            box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.2);
+        }
+        .parallax {
+            background-image: url('einstein.jpg');
+            height: 100vh;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .theory-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(15px);
+            box-shadow: 0px 0px 30px rgba(227,228,237,0.37);
+            border: 2px solid rgba(255,255,255,0.18);
+            margin: 20px;
+            height: 450px;
+            border-radius: 10px;
+            width: 80%;
+        }
+     
+        .theory-section img {
+            width: 450px;
+            /* height: 100px; */
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .theory-section .text {
+            flex: 1;
+            /* text-align:left; */
+            /* font-size: 20px; */
+            min-width: 250px;
+            max-width: 600px;
+            text-align: left;
+            padding: 10px;
+        }
+        .theory-section button {
+            background-color: #ff9800;
+            border: none;
+            padding: 15px;
+            font-size: 14   px;
+            width: 160px;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .reverse {
+            flex-direction: row-reverse;
+        }
+        /* .info {
+            padding: 50px;
+            background: #222;
+        } */
+        .innovations {
+            padding: 50px;
+            background: #333;
+        }
+        .innovations ul {
+            list-style: none;
+            padding: 0;
+        }
+        .innovations li {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+        @media (max-width: 768px) {
+            .theory-section {
+                flex-direction: column;
+                text-align: center;
+            }
+            .theory-section .text {
+                text-align: center;
+            }
+        }
+        .info1 {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            padding: 50px;
+
+            background: #222;
+            flex-wrap: wrap;
+        }
+        .info1 img {
+            width: 250px;
+            height: auto;
+           
+            /* justify-content: left; */
+            margin-right: 20px;
+            border-radius: 10px;
+        }
+        .info {
+            text-align: left;
+            max-width: 500px;
+        }
+    li{
+        text-align: left;
+        line-height: 50px;
+    }
+    b{
+        background-color: rgb(88, 88, 88);
+        padding: 10px;
+        border-radius: 10px;
+        
+    }
+h2{
+    font-size: 40px;
+}
+h1{
+    font-family: "Alegreya", serif;
+}
+.info p{
+    font-size: 20px;
+}
+    </style>
+</head>
+<body>
+    <div class="quote">
+        <h1>"Imagination is more important than knowledge."</h1>
+    </div>
+    <div class="info1">
+        <img src="albert funny.jpg" alt="Einstein">
+        <div class="info">
+            <h2>Albert Einstein</h2>
+            <p><strong>Born :</strong> March 14, 1879</p>
+            <p><strong>Died :</strong> April 18, 1955</p>
+            <p><strong>Contributions:</strong> Theory of Relativity, Photoelectric Effect, E=mc², Brownian Motion, Quantum Theory of Light</p>
+            <p><strong>Education :</strong> ETH Zurich (Swiss Federal Polytechnic), University of Zurich
+                Early Life: Einstein was born in Ulm, Germany, and showed an early passion for mathematics and physics.</p>
+
+              <p><strong> Famous Awards and Honors : </strong>
+                <ul>
+                    <li>1921 Nobel Prize in Physics (for the Photoelectric Effect).</li>
+                       <li> Numerous honorary degrees and recognitions worldwide</li>
+                </ul>
+            </p>
+               
+        </div>
+    </div>
+    </div>
+    <div class="parallax">
+        <div class="theory-section">
+            <img src="albert img1.webp" alt="Einstein">
+            <div class="text">
+                <h2>Special Theory of Relativity</h2>
+                <p>The Special Theory of Relativity, proposed by Albert Einstein in <strong>1905</strong>, revolutionized our understanding of space and time. It introduced the concept that the laws of physics are the same for all observers in uniform motion and that the speed of light is constant regardless of the observer's motion. The theory led to the famous equation <strong>E = m c²</strong>, which shows the equivalence of mass and energy. It also introduced time dilation and length contraction, meaning time slows down and objects appear shorter as they approach the speed of light. This theory laid the foundation for modern physics and has been confirmed by numerous experiments.</p>
+                <button onclick="window.location.href='https://en.wikipedia.org/wiki/Special_relativity'">Learn More</button>
+            </div>
+        </div>
+        <div class="theory-section reverse">
+            <div class="text">
+                <h2>General Theory of Relativity</h2>
+                <p>The General Theory of Relativity, published by Albert Einstein in <strong>1915</strong>, redefined gravity as the curvature of space-time caused by massive objects. It explains that heavy bodies like planets and stars bend the space-time fabric, affecting the movement of other objects and even light. This theory introduced concepts like gravitational time dilation (time slows down near massive objects) and predicted black holes. It was confirmed through the <strong>1919</strong  > solar eclipse experiment, where light from distant stars was observed bending around the Sun, solidifying Einstein’s groundbreaking contributions to physics.</p>
+                <button onclick="window.location.href='https://en.wikipedia.org/wiki/General_relativity'">Learn More</button>
+            </div>
+            <img src="albert image 2.jpg" alt="Einstein">
+        </div>
+    </div>
+   
+    <div class="innovations">
+        <h2>Innovations and Contributions</h2>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1879 :</b>  Born to Hermann Einstein (a featherbed salesman) and his wife Pauline in Ulm, Germany.</li>        
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1884 :</b> Receives his first compass around this time, inspiring a lifelong quest to investigate mysteries of the natural world.</li>        
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1889 :</b> Settles into a program of self-education at age 10 and begins reading as much about science as he can.</li>        
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1894 :</b> Stays on in Munich to finish the school year after his parents move to Pavia, Italy. Lasts only one term on his own and then follows his family to Italy.</li>        
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1895 :</b> Attempts to skip high school by taking an entrance exam to the Swiss Polytechnic, a top technical university, but fails the arts portion. His family sends him to the Swiss town of Aarau to finish high school.</li>        
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1896 :</b> Graduates from high school at age 17 and enrolls at the ETH (the Federal Polytechnic School) in Zurich.</li>        
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1898 :</b> Falls in love with Mileva Maric, a Serbian classmate at the ETH.</li>        
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1900 :</b> Graduates from the ETH.</li>        
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1901 :</b> Becomes a Swiss citizen and, unemployed, searches for work. Meets Maric in northern Italy for a tryst, and she becomes pregnant. In the fall, he finds work in Schaffhausen, Switzerland as a tutor. Maric, visibly pregnant, moves to Stein am Rhein, three miles upriver. She then returns to her parents' home to give birth to her child. Einstein moves to Bern.</li>        
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1902 :</b> In January, Maric gives birth to their daughter, Lieserl, whom they eventually put up for adoption. Lieserl reportedly becomes ill, and then all record of her disappears. Einstein takes a job at the Swiss Patent Office. Hermann Einstein becomes ill and dies.</li>        
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1903 :</b> Marries Maric in January.</li>        
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1904 :</b> Maric gives birth to their first son, Hans Albert.</li>        
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1905 :</b> Publishes, at age 26, five groundbreaking papers, making this his "annus mirabilis," or miracle year. One of the papers introduces his special theory of relativity and another E = mc2.</li>        
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1906 :</b> Continues working as an examiner at the Swiss Patent Office in Bern.</li>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1907 :</b> Begins applying the laws of gravity to his special theory of relativity.</li>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1910 :</b> Son Eduard is born.</li>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1911 :</b> Moves with his family to Prague, where he is given a full professorship at the German University there. Attends the invitation-only Solvay Conference in Brussels, the first world physics conference; he is the youngest physicist there.</li>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1912 :</b> Moves with his family to Zurich, where he becomes a professor of theoretical physics at the ETH.</li>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1913 :</b> Works on his new theory of gravity.</li>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1914 :</b> Becomes director of the Kaiser Wilhelm Institute in Berlin and professor of theoretical physics at the University of Berlin. Maric and the children move there in April, but they return to Zurich after three months. Divorce proceedings begin. In August, World War I begins.</li>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1915 :</b> Completes the general theory of relativity.</li>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1917 :</b> Collapses from exhaustion and falls seriously ill. Nursed back to health by his cousin Elsa L&#246;wenthal. Publishes his first paper on cosmology. </li>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1919 :</b> Marries L&#246;wenthal. On May 29, a solar eclipse provides proof of the general theory of relativity.</li>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1922 :</b> Awarded the Nobel Prize in Physics for 1921.</li>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1927 :</b> Attends fifth Solvay Conference and begins developing the foundation of quantum mechanics with Niels Bohr.</li>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1928 :</b> Begins pursuing his idea of a unified field theory.</li>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1932 :</b> As a Jew, begins to feel the heat of Nazi Germany. Now, at 53, at the height of his fame.</li>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1933 :</b> Sets sail with L&#246;wenthal for the United States. Settles with her in Princeton, New Jersey, where he assumes a post at the Institute for Advanced Study.</li>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1936 :</b> L&#246;wenthal dies after a brief illness.</li>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1939 :</b> Writes a famous letter to President Franklin Roosevelt not long after the start of World War II that warns of the possibility of Germany's building an atomic bomb and urges nuclear research.</li>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1940 :</b> Becomes an American citizen (retains his Swiss citizenship).</li>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1949 :</b> Ex-wife Maric dies.</li>
+        <li><i class="fa-li fa fa-shield fa-rotate-270"></i><b>1955 :</b> Dies of heart failure on April 18. </li>
+    </div>
+</body>
+</html>
