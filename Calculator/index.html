@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aesthetic Calculator</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    /* background: radial-gradient(circle, #222, #000); */
+    font-family: 'Press Start 2P', cursive;
+}
+
+.calculator {
+    width: 320px;
+    padding: 20px;
+    background: linear-gradient(145deg, #313030, #322f2f);
+    border-radius: 12px;
+    box-shadow: 6px 6px 12px #121212, -6px -6px 12px #2a2a2a;
+    text-align: center;
+}
+
+.brand {
+    font-size: 12px;
+    color: #58e757;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+#display {
+    width: 95%;
+    height: 50px;
+    background: rgb(49, 122, 49);
+    color: #0f0;
+    font-size: 20px;
+    text-align: right;
+    font-family:'Press Start 2P', cursive ;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    box-shadow: inset -2px -2px 5px rgba(0, 0, 0, 0.2), inset 2px 2px 5px rgba(255, 255, 255, 0.1);
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    width: 65px;
+    height: 65px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px; /* <-- Changed to slight rounding */
+    background: linear-gradient(145deg, #232323, #2e2e2e);
+    color: white;
+    cursor: pointer;
+    box-shadow: 3px 3px 6px #121212, -3px -3px 6px #2a2a2a;
+    transition: all 0.2s;
+}
+
+button:hover {
+    background: linear-gradient(145deg, #2a2a2a, #3a3a3a);
+}
+
+button:active {
+    transform: scale(0.95);
+    box-shadow: inset 3px 3px 6px #121212, inset -3px -3px 6px #2a2a2a;
+}
+
+.clear {
+    background: #007bff;
+    color: white;
+}
+
+.delete {
+    background: #444;
+}
+
+.operator {
+    background: #ff9100;
+}
+
+.plus {
+    background: linear-gradient(145deg, #ff2e2e, #ff5050);
+    font-size: 22px;
+    height: 75px; /* Slightly taller */
+}
+
+.equal {
+    background: #00c853;
+}
+
+     </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="brand">CODSOFT<sup>TM</sup>
+        </div>
+        <input type="text" id="display" disabled>
+        <div class="buttons">
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="delete" onclick="deleteLast()">←</button>
+            <button onclick="appendNumber('7')">7</button>
+            <!-- <button class="operator plus" onclick="appendNumber('+')">+</button> -->
+            <button class="operator" onclick="appendNumber('/')">÷</button>
+
+            <button onclick="appendNumber('8')">8</button>
+            <button onclick="appendNumber('9')">9</button>
+            <button onclick="appendNumber('4')">4</button>
+            <button class="operator" onclick="appendNumber('-')">−</button>
+            
+            <button onclick="appendNumber('5')">5</button>
+            <button onclick="appendNumber('6')">6</button>
+            <button onclick="appendNumber('1')">1</button>
+            <button class="operator" onclick="appendNumber('*')">×</button>
+
+            <button onclick="appendNumber('2')">2</button>
+            <button onclick="appendNumber('3')">3</button>
+            <!-- <button class="operator plus" onclick="appendNumber('+')">+</button> -->
+             
+            <button onclick="appendNumber('0')">0</button>
+            <button class="operator plus" onclick="appendNumber('+')">+</button>
+            <button onclick="appendNumber('.')">.</button>
+            <button onclick="appendNumber('00')">00</button>
+
+           
+    <!-- grid-template-columns: repeat(4, 1fr); -->
+            <button class="equal" onclick="calculate()">=</button>
+        </div>
+    </div>
+    <script>
+        let display = document.getElementById('display');
+
+function appendNumber(num) {
+    display.value += num;
+}
+
+function clearDisplay() {
+    display.value = '';
+}
+
+function deleteLast() {
+    display.value = display.value.slice(0, -1);
+}
+
+function calculate() {
+    try {
+        display.value = eval(display.value);
+    } catch (e) {
+        display.value = 'Error';
+    }
+}
+
+    </script>
+</body>
+</html>
